@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    //Varaibles for calaculation
     var baseFare = 2.5
     var chargePerKM = 0.81
     var serviceFee = 1.75
@@ -34,17 +34,19 @@ class ViewController: UIViewController {
 
     //MARK: Funtions
     @IBAction func findRideButton(_ sender: Any) {
+        //Getting the date
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
+        baseFare = 2.5
         
-        
-        
+        //Branch for peak hours
         if(hour <= 6 && hour >= 4)
         {
-            print("in peak hourse")
+            print("in peak hours")
             
             chargePerKM = chargePerKM + ((chargePerKM * 20) / 100)
+            //subbranch for direct ride
             if(switchButton.isOn == true)
             {
                 print("in a stright ryde")
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
                     totalPrice = (baseFare + 4.8 * chargePerKM + serviceFee)
                     
                 }
+                    //Validation code
                 else{
                     let alert = UIAlertController(title: "Error!", message: "You cannot leave the text box empty", preferredStyle: UIAlertController.Style.alert)
                     let alertAction = UIAlertAction(title: "OK!", style: UIAlertAction.Style.default)
@@ -73,6 +76,7 @@ class ViewController: UIViewController {
                 }
                 
             }
+                //Pool ride subbranch
             else {
                 baseFare = baseFare*0.9
                 print("in NOT a direct ride")
@@ -102,6 +106,7 @@ class ViewController: UIViewController {
                 
             }
         }
+            //Not peak hours branch
         else{
             
             print("in not peak hourse")
@@ -165,7 +170,7 @@ class ViewController: UIViewController {
         
     }
     
-    
+    //Passing the data to the next screen
     //MARK: functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ryderConfirmScreen = segue.destination as! RydeConfirmedScreenController

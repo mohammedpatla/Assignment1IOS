@@ -25,7 +25,7 @@ class RydeConfirmedScreenController: UIViewController {
     @IBOutlet weak var distanceChargedTextView: UILabel!
     @IBOutlet weak var serviceFeeTextView: UILabel!
     @IBOutlet weak var totalTextView: UILabel!
-    
+    // Setthing view element with valu e from previous
     override func viewDidLoad() {
         super.viewDidLoad()
         toLocatioTextView.text = toLoc
