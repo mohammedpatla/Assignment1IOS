@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var baseFare = 2.5
+    var chargePerKM = 0.81
+    var serviceFee = 1.75
+    var minimumFee = 4.64
+    var totalPrice = 0.0
+    var distanceCharged = 0.0
     //MARK: Outlets
     @IBOutlet weak var fromTextView: UITextField!
     @IBOutlet weak var toTextView: UITextField!
@@ -32,11 +38,7 @@ class ViewController: UIViewController {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         
-        var baseFare = 2.5
-        var chargePerKM = 0.81
-        var serviceFee = 1.75
-        var minimumFee = 4.64
-        var totalPrice = 0.0
+        
         
         if(hour <= 6 && hour >= 4)
         {
@@ -47,25 +49,55 @@ class ViewController: UIViewController {
             {
                 print("in a stright ryde")
                 if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "Sheridan Brampton"){
+                    distanceCharged = 40.7 * chargePerKM
                     totalPrice = (baseFare + 40.7 * chargePerKM + serviceFee)
                     
-                    print("sheridan ok-br /(totalPrice)")
+                }
+                else if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "The Boot Social"){
+                    distanceCharged = 4.8 * chargePerKM
+                    totalPrice = (baseFare + 4.8 * chargePerKM + serviceFee)
                     
                 }
-                if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "The Boot Social"){
-                    totalPrice = (baseFare + 4.8 * chargePerKM + serviceFee)
+                else{
+                    let alert = UIAlertController(title: "Error!", message: "You cannot leave the text box empty", preferredStyle: UIAlertController.Style.alert)
+                    let alertAction = UIAlertAction(title: "OK!", style: UIAlertAction.Style.default)
+                    {
+                        (UIAlertAction) -> Void in
+                    }
+                    alert.addAction(alertAction)
+                    present(alert, animated: true)
+                    {
+                        () -> Void in
+                    }
+
                 }
                 
             }
             else {
+                baseFare = baseFare*0.9
                 print("in NOT a direct ride")
                 baseFare = baseFare - ((baseFare * 10) / 100)
                 if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "Sheridan Brampton"){
+                    distanceCharged = 40.7 * chargePerKM
                     totalPrice = (baseFare + 40.7 * chargePerKM + serviceFee)
                     
                 }
-                if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "The Boot Social"){
+                else if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "The Boot Social"){
+                    distanceCharged = 4.8 * chargePerKM
                     totalPrice = (baseFare + 4.8 * chargePerKM + serviceFee)
+                }
+                else{
+                    let alert = UIAlertController(title: "Error!", message: "You cannot leave the text box empty", preferredStyle: UIAlertController.Style.alert)
+                    let alertAction = UIAlertAction(title: "OK!", style: UIAlertAction.Style.default)
+                    {
+                        (UIAlertAction) -> Void in
+                    }
+                    alert.addAction(alertAction)
+                    present(alert, animated: true)
+                    {
+                        () -> Void in
+                    }
+                    
                 }
                 
             }
@@ -77,29 +109,73 @@ class ViewController: UIViewController {
             {
                 print("in a stright ryde")
                 if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "Sheridan Brampton"){
+                    distanceCharged = 40.7 * chargePerKM
                     totalPrice = (baseFare + 40.7 * chargePerKM + serviceFee)
                     print("sheridan ok-br /(totalPrice)")
                     
                 }
-                if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "The Boot Social"){
+                else if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "The Boot Social"){
+                    distanceCharged = 4.8 * chargePerKM
                     totalPrice = (baseFare + 4.8 * chargePerKM + serviceFee)
+                }
+                else{
+                    let alert = UIAlertController(title: "Error!", message: "You cannot leave the text box empty", preferredStyle: UIAlertController.Style.alert)
+                    let alertAction = UIAlertAction(title: "OK!", style: UIAlertAction.Style.default)
+                    {
+                        (UIAlertAction) -> Void in
+                    }
+                    alert.addAction(alertAction)
+                    present(alert, animated: true)
+                    {
+                        () -> Void in
+                    }
+                    
                 }
                 
             }
             else {
+                baseFare = baseFare*0.9
                 print("in NOT a stright ride")
                 if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "Sheridan Brampton"){
+                    distanceCharged = 40.7 * chargePerKM
                     totalPrice = (baseFare + 40.7 * chargePerKM + serviceFee)
                     
                 }
-                if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "The Boot Social"){
+                else if(fromTextView.text == "Sheridan Oakville" && toTextView.text == "The Boot Social"){
+                    distanceCharged = 4.8 * chargePerKM
                     totalPrice = (baseFare + 4.8 * chargePerKM + serviceFee)
+                }
+                else{
+                    let alert = UIAlertController(title: "Error!", message: "You cannot leave the text box empty", preferredStyle: UIAlertController.Style.alert)
+                    let alertAction = UIAlertAction(title: "OK!", style: UIAlertAction.Style.default)
+                    {
+                        (UIAlertAction) -> Void in
+                    }
+                    alert.addAction(alertAction)
+                    present(alert, animated: true)
+                    {
+                        () -> Void in
+                    }
+                    
                 }
                 
             }
             
         }
         
+    }
+    
+    
+    //MARK: functions
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ryderConfirmScreen = segue.destination as! RydeConfirmedScreenController
+        //Setting the variables for the next screen
+        ryderConfirmScreen.baseFee = baseFare;
+        ryderConfirmScreen.fromLoc = fromTextView.text!
+        ryderConfirmScreen.toLoc = toTextView.text!
+        ryderConfirmScreen.serviceFee = serviceFee
+        ryderConfirmScreen.totalConfirmed = totalPrice
+        ryderConfirmScreen.distanceCharged = distanceCharged
     }
     
 }
