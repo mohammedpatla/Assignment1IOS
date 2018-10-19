@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2BD7E9217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BD7E8217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift */; };
+		CE2BD7EA217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BD7E8217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift */; };
+		CE2BD7EB217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BD7E8217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift */; };
 		D6343AB5216E62860063105A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6343AB4216E62860063105A /* AppDelegate.swift */; };
 		D6343AB7216E62860063105A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6343AB6216E62860063105A /* ViewController.swift */; };
 		D6343ABA216E62860063105A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6343AB8216E62860063105A /* Main.storyboard */; };
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE2BD7E8217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RydeConfirmedScreenController.swift; sourceTree = "<group>"; };
 		D6343AB1216E62860063105A /* Assignment1IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment1IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6343AB4216E62860063105A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6343AB6216E62860063105A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				D6343AB4216E62860063105A /* AppDelegate.swift */,
 				D6343AB6216E62860063105A /* ViewController.swift */,
 				D6343AB8216E62860063105A /* Main.storyboard */,
+				CE2BD7E8217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift */,
 				D6343ABE216E62860063105A /* Assets.xcassets */,
 				D6343AC0216E62860063105A /* LaunchScreen.storyboard */,
 				D6343AC3216E62860063105A /* Info.plist */,
@@ -260,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6343AB7216E62860063105A /* ViewController.swift in Sources */,
+				CE2BD7E9217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift in Sources */,
 				D6343ABD216E62860063105A /* Assignment1IOS.xcdatamodeld in Sources */,
 				D6343AB5216E62860063105A /* AppDelegate.swift in Sources */,
 			);
@@ -270,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6343ACD216E62860063105A /* Assignment1IOSTests.swift in Sources */,
+				CE2BD7EA217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6343AD8216E62860063105A /* Assignment1IOSUITests.swift in Sources */,
+				CE2BD7EB217A3DF9001ED4E7 /* RydeConfirmedScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

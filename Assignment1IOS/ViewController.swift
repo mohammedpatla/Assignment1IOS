@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+    
+        print(hour)
     }
 
 
